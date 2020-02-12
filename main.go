@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/mol-jp/goheif"
+	"github.com/mol-jp/goheif/src"
 	"image/jpeg"
 	"io"
 	"log"
@@ -72,12 +72,12 @@ func main() {
 	}
 	defer fi.Close()
 
-	exif, err := goheif.ExtractExif(fi)
+	exif, err := src.ExtractExif(fi)
 	if err != nil {
 		log.Printf("Warning: no EXIF from %s: %v\n", fin, err)
 	}
 
-	img, err := goheif.Decode(fi)
+	img, err := src.Decode(fi)
 	if err != nil {
 		log.Fatalf("Failed to parse %s: %v\n", fin, err)
 	}

@@ -1,4 +1,4 @@
-package goheif
+package src
 
 import (
 	"bytes"
